@@ -67,7 +67,9 @@ function removeEmptyArrays(obj: any, params: any[]) {
     const currentParam = params.find(item => item.name === key)
     if (newObj.hasOwnProperty(key)) {
       if (!Array.isArray(newObj[key]) && typeof newObj[key] === 'object') {
-        newObj[key] = removeEmptyStrings(newObj[key])
+        if (!["__proto__", "constructor", "prototype"].includes(key)) {
+          newObj[key] = removeEmptyStrings(newObj[key])
+        }
       }
       if (currentParam && currentParam.required) {
         return newObj
