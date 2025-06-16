@@ -93,7 +93,8 @@
     "react-alert": {
       "react": "^18.0.0",
       "react-dom": "^18.0.0"
-    }
+    },
+    "brace-expansion@<=4.0.1": "4.0.1"
   },
   "browserslist": {
     "production": [
